@@ -1,0 +1,23 @@
+
+<div id="bodyIncidentes">
+
+<ul id="ulIncidentes">
+    {{#each incidentes}}
+    <li id="liIncidentes">
+        <ul><p>Tipo de incidente: </p>{{tipo}}</ul>
+        <p>Descripcion: </p><p>{{descripcion}}</p>
+        <p>Direcion: </p><p>{{direccion}}</p>
+        {{#each comentario}}
+       
+        <p> {{this}}  </p>
+       
+         {{/each }}
+        <form action="/comentar/{{_id}}" method="post">
+        <input type="text" placeholder="comentario" name="comentario" id="comentario"/>
+       <button>Comentar</button>
+        </form>
+    </li> 
+    <br>  
+    {{/each}}
+</ul>
+</div>

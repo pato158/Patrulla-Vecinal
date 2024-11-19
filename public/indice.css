@@ -1,0 +1,559 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#cajaCentral {
+    display: flex; 
+    justify-content:center; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+#imagen1{
+    background-image: url('../imagenes/Homero-jefe.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px; 
+    height: 200px; 
+    /*border: solid 2px yellow;*/
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 24px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+   /* border: solid 2px red;*/
+    height: 100px; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 400px;
+    padding-left: 80px;
+    padding-right: 80px;
+    animation: colorChange 2.5s infinite alternate;
+}
+#patrulla{
+    font-size: 37px;
+}
+
+#imagen2 {
+    background-image: url('imagenes/HomeroyMoe.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px; 
+    height: 200px; 
+    /*border: solid 2px yellow;*/
+}
+
+
+header ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+header ul li {
+    margin: 0 15px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #ecf0f1; /* Color inicial del texto */
+    font-size: 18px;
+    padding: 15px 45px;
+    border: 2px solid transparent; /* Bordes invisibles inicialmente */
+    transition: all 0.3s ease; /* Transición suave */
+    position: relative; /* Necesario para algunos efectos */
+    font-family: 'Poppins', sans-serif;
+}
+
+header ul li a:hover {
+    color: #ffffff; /* Cambia el color del texto al blanco al hacer hover */
+    background-color: #3498db; /* Color de fondo azul vibrante */
+    border: 2px solid #3498db; /* Borde azul */
+    border-radius: 5px;
+    transform: scale(1.1); /* Aumenta el tamaño del enlace */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+}
+
+header ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff; /* Barra blanca */
+    transition: width 0.3s ease, left 0.3s ease; /* Animación de la barra */
+    transform: translateX(-50%);
+}
+
+header ul li a:hover::before {
+    width: 100%; /* La barra se extiende completamente al hacer hover */
+    left: 0;
+}
+
+@media (max-width: 600px) {
+    header ul {
+        flex-direction: column;
+    }
+
+    header ul li {
+        margin: 10px 0;
+    }
+}
+@keyframes colorChange {
+    0% {
+        color: #35D1F8; 
+    }
+    100% {
+        color: #000000; 
+    }
+}
+
+#bodyIncidentes {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+/*
+main {
+    flex: 1; 
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px; 
+    box-sizing: border-box;
+    overflow-y: auto; 
+}
+*/
+#liIncidentes {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#ulIncidentes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#liIncidentes ul {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #0066cc;
+    text-transform: uppercase;
+}
+
+#liIncidentes p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #555;
+}
+
+#liIncidentes p:first-of-type {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+#comentario {
+    width: calc(100% - 120px);
+    padding: 10px;
+    margin-right: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #f7f7f7;
+}
+
+#comentario:focus {
+    border-color: #007BFF;
+    background-color: #e6f7ff;
+    outline: none;
+}
+
+#liIncidentes form {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#liIncidentes form button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; 
+}
+
+#liIncidentes form button:hover {
+    background-color: #218838; 
+    transform: scale(1.05); 
+}
+
+#liIncidentes form button:active {
+    background-color: #1e7e34; 
+    transform: scale(1); 
+}
+
+#divIncidentes{
+    border: solid 2px lightcoral;
+}
+
+#MapaInseguridad {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 36px; 
+    font-weight: bold; 
+    color: #007BFF; 
+    text-align: center; 
+    margin-top: 50px; 
+    animation: colorChange1 4s infinite; 
+}
+
+@keyframes colorChange1 {
+    0% {
+        color: #007BFF; 
+    }
+    25% {
+        color: #FF6347; 
+    }
+    50% {
+        color: #32CD32;
+    }
+    75% {
+        color: #FFD700; 
+    }
+    100% {
+        color: #007BFF; 
+    }
+}
+
+#bodyIncidentes {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    text-align: center;
+}
+
+#ulIncidentes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 100px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    
+}
+
+#liIncidentes {
+    background-color: #ffffff;
+    width: 280px; 
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px; 
+}
+
+#liIncidentes ul {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333; 
+    text-transform: uppercase;
+}
+
+#liIncidentes p {
+    font-size: 13px; 
+    line-height: 1.4;
+    margin: 5px 0;
+    color: #333; 
+}
+
+#liIncidentes p:first-of-type {
+    font-weight: bold;
+    color: #333; 
+}
+
+#liIncidentes form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#liIncidentes form button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px; 
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#liIncidentes form button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+#liIncidentes form button:active {
+    background-color: #1e7e34;
+    transform: scale(1);
+}
+
+#divIncidentes {
+    border: solid 2px lightcoral;
+}
+main {
+    flex: 1; 
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px; 
+    box-sizing: border-box;
+    overflow-y: auto; 
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1; 
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-height: 100vh;
+}
+
+
+main {
+    flex: 1; 
+    margin-top: 20px; 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    background-color: #ffffff; 
+    border: 1px solid #35D1F8; 
+    border-radius: 8px;
+    padding: 20px 30px;
+    width: 500px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+label {
+    display: block;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #2c3e50; 
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #95a5a6; 
+}
+
+button {
+    background-color: #35D1F8; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2c3e50; 
+}
+/*
+#bodyIncidentes {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#ulIncidentes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 100px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+#liIncidentes {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    width: 280px; 
+    font-size: 14px; 
+}
+
+#liIncidentes ul {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+#liIncidentes p {
+    font-size: 13px; 
+    line-height: 1.4;
+    margin: 5px 0;
+    color: #333;
+}
+
+#liIncidentes p:first-of-type {
+    font-weight: bold;
+    color: #333;
+}
+
+#comentario {
+    width: calc(100% - 120px);
+    padding: 10px;
+    margin-right: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #f7f7f7;
+}
+
+#comentario:focus {
+    border-color: #007BFF;
+    background-color: #e6f7ff;
+    outline: none;
+}
+
+#liIncidentes form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#liIncidentes form button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; 
+}
+
+#liIncidentes form button:hover {
+    background-color: #218838; 
+    transform: scale(1.05); 
+}
+
+#liIncidentes form button:active {
+    background-color: #1e7e34; 
+    transform: scale(1); 
+}
+
+#divIncidentes{
+    border: solid 2px lightcoral;
+}
+
+#MapaInseguridad {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 36px; 
+    font-weight: bold; 
+    color: #007BFF; 
+    text-align: center; 
+    margin-top: 50px; 
+    animation: colorChange1 4s infinite; 
+}
+
+@keyframes colorChange1 {
+    0% {
+        color: #007BFF; 
+    }
+    25% {
+        color: #FF6347; 
+    }
+    50% {
+        color: #32CD32;
+    }
+    75% {
+        color: #FFD700; 
+    }
+    100% {
+        color: #007BFF; 
+    }
+}*/
