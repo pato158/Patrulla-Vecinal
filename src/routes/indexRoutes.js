@@ -39,10 +39,11 @@ router.post("/comentar/:id",async(req, res)=>{
         {$push:{comentario:coment}},
       {new : true, upsert:true}
     );
-        if (!actualizado) {
-          return res.status(404).send("Incidente no encontrado"); 
-        }
-    } 
+    if (!actualizado) {
+      return res.status(404).send("Incidente no encontrado"); 
+    }
+  } 
+  res.redirect("/");
    
   } catch (error) {
     res.status(500).send("Error al actualizar el incidente",500);
@@ -51,6 +52,9 @@ router.post("/comentar/:id",async(req, res)=>{
   
 router.get("/incidencia",(req,res)=>{
     res.render("incidencia")
+});
+router.get("/sospechoso",(req,res)=>{
+  res.render("sospechoso")
 });
 
 
