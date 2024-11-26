@@ -2,12 +2,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cargar Incidente</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     
 </head>
 <body id="idBodyInci">
 
-<form id="idForm" action="/incidencia/agregar" method="post">
+<form id="idForm" action="/filtrado" method="post">
     <div>
         <label for="tipo">Tipo de incidente: </label>
         <select id="tipo" name="tipo"> 
@@ -17,14 +16,12 @@
             <option value="Incendio">Incendio</option>
             
     </div>
-    <div>
-        <label for="descripcion">Descripción: </label>
-        <textarea name="descripcion" cols="25" rows="5" placeholder="Aqui su descripción"></textarea>
-    </div>
+    
     <div>
         <label for="direccion">Dirección</label> 
         <input type="text" name="direccion" placeholder="Dirección" id="direccion"/>
     </div>
-    <button>Registrar</button>
-    </form>
+    <button type="submit">Consultar</button>
+</form>
+{{> incidencias/incidenciaTablaBorrar}}
 </body>

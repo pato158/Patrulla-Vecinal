@@ -49,12 +49,38 @@ router.post("/comentar/:id",async(req, res)=>{
     res.status(500).send("Error al actualizar el incidente",500);
   }
 });
+router.post("/filtrado", async(req,res)=>{
+  try {
+    const tipoBusq = req.body.tipo;
+    const filtrado = await Incidente.find({tipo:tipoBusq}).sort({_id:-1}).lean(); 
+    res.render("filtrado",{incidentes : filtrado});
+    
+    
+  } catch (error) {
+    
+  }
+})
+router.post("/borrar/:id",async(req, res)=>{
+  try {
+    const id = req.params.id;
+    const borrado = await Incidente.findByIdAndDelete( {_id:id})
+    console .log (borrado); 
+   
+    res.redirect("/filtrado"); 
+  }
+  catch(error){
+    console.log(error)
+  }
+});
   
 router.get("/incidencia",(req,res)=>{
     res.render("incidencia")
 });
 router.get("/sospechoso",(req,res)=>{
   res.render("sospechoso")
+});
+router.get("/filtrado",(req,res)=>{
+  res.render("filtrado")
 });
 
 
